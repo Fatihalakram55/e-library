@@ -12,13 +12,15 @@ Route::get('/about', function () {
 });
 Route::get('/dashboard', function () {
     return view('dashboard');
-});
+})->middleware(['auth', 'isAdmin']);
 
 Route::get('/hall', [HallController::class, 'index']);
 Route::get('/hall/book/{book:slug}', [HallController::class, 'singleBook']);
 
-Route::get('/login', [LoginController::class, 'login']);
-Route::post('/login', [LoginController::class, 'authenticate']);
+Route::get('/login', [LoginController::class, 'login'])->name('login')->middleware('guest');
+Route::post('/login', [LoginController::class, 'authenticate'])->middleware('guest');
 
-Route::get('/registration', [LoginController::class, 'registration']);
-Route::post('/registration', [LoginController::class, 'store']);
+Route::get('/registration', [LoginController::class, 'registration'])->middleware('guest');
+Route::post('/registration', [LoginController::class, 'store'])->middleware('guest');
+
+Route::post('logout', [LoginController::class, 'logout'])->middleware('auth');
