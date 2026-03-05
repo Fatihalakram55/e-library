@@ -10,9 +10,6 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return view('about', ['title' => 'About']);
 });
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'isAdmin']);
 
 Route::get('/hall', [HallController::class, 'index']);
 Route::get('/hall/book/{book:slug}', [HallController::class, 'singleBook']);
@@ -24,3 +21,7 @@ Route::get('/registration', [LoginController::class, 'registration'])->middlewar
 Route::post('/registration', [LoginController::class, 'store'])->middleware('guest');
 
 Route::post('logout', [LoginController::class, 'logout'])->middleware('auth');
+
+Route::get('/dashboard', function () {
+    return view('dashboard.dashboard', ['title' => 'Dashboard']);
+})->middleware(['auth', 'isAdmin']);
