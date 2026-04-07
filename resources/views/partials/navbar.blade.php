@@ -39,12 +39,12 @@
                         class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 ring-1 shadow-lg ring-black/5 focus:outline-hidden" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
                         <!-- Active: "bg-gray-100 outline-hidden", Not Active: "" -->
                         <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">{{ auth()->user()->name }}</a>
-                        @if (auth()->user()->role === 'admin')
-                            <a href="/dashboard" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1" id="user-menu-item-1">Dashboard</a>
+                        @if (auth()->user()->role == 'admin')
+                            <a href="/dashboard" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition" role="menuitem" tabindex="-1" id="user-menu-item-0">Dashboard</a>
                         @endif
                         <form action="/logout" method="POST">
                             @csrf
-                            <button onclick="return confirm('Apakah anda yakin untuk logout?')" type="submit" class="cursor-pointer block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</button>
+                            <button onclick="return confirm('Apakah anda yakin untuk logout?')" type="submit" class="cursor-pointer px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition w-full text-left" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</button>
                         </form>
                     </div>
                 </div>
@@ -91,12 +91,12 @@
                 </div>
             </div>
             <div class="mt-3 space-y-1 px-2">
-                @if (auth()->user()->role === 'admin')
-                    <a href="/dashboard" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white" role="menuitem" tabindex="-1" id="user-menu-item-1">Dashboard</a>
+                @if (auth()->user()->role == 'admin')
+                    <a href="/dashboard" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">Dashboard</a>
                 @endif
                 <form action="/logout" method="POST">
                     @csrf
-                    <button onclick="return confirm('Apakah anda yakin untuk logout?')" type="submit" onclick="ret" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">Sign out</button>
+                    <button onclick="return confirm('Apakah anda yakin untuk logout?')" type="submit" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">Sign out</button>
                 </form>
             </div>
             </div>

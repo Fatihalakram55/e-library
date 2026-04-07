@@ -3,6 +3,7 @@
     <button type="button" class="text-lg text-gray-900 font-semibold sidebar-toggle">
         <i class="ri-menu-line"></i>
     </button>
+
     <ul class="ml-auto flex items-center">
         <li class="mr-1 dropdown">
             <button type="button" class="dropdown-toggle text-gray-400 mr-4 w-8 h-8 rounded flex items-center justify-center  hover:text-gray-600">
@@ -159,18 +160,12 @@
             </button>
             <ul class="dropdown-menu shadow-md shadow-black/5 z-30 hidden py-1.5 rounded-md bg-white border border-gray-100 w-full max-w-[140px]">
                 <li>
-                    <a href="#" class="flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-[#f84525] hover:bg-gray-50">Profile</a>
+                    <a href="/" class="flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-[#f84525] hover:bg-gray-50">Homepage</a>
                 </li>
                 <li>
-                    <a href="#" class="flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-[#f84525] hover:bg-gray-50">Settings</a>
-                </li>
-                <li>
-                    <form method="POST" action="">
-                        <a role="menuitem" class="flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-[#f84525] hover:bg-gray-50 cursor-pointer"
-                            onclick="event.preventDefault();
-                            this.closest('form').submit();">
-                            Log Out
-                        </a>
+                    <form action="/logout" method="POST">
+                        @csrf
+                        <button onclick="return confirm('Apakah anda yakin untuk logout?')" type="submit" class="w-full flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-[#f84525] hover:bg-gray-50">Sign out</button>
                     </form>
                 </li>
             </ul>

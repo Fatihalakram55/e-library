@@ -50,17 +50,17 @@
             </div>
     
             <div class="grid max-w-md grid-cols-1 mx-auto mt-12 lg:max-w-full lg:mt-16 lg:grid-cols-3 gap-x-16 gap-y-12">
+                
                 @foreach ($books as $book)
                     <div>
                         <a href="/hall/book/{{ $book->slug }}" class="block aspect-w-4 aspect-h-3">
                             @if ($book->cover)
-                                <img class="object-cover w-full h-full" src="{{ Storage::url($book->cover) }}"/>
-                            @else
-                                <img class="object-cover w-full h-full" src="https://picsum.photos/600/400?random=1"/>
+                                <img class="object-cover w-full h-full" src="{{ Storage::url($book->cover) }}" alt="{{ $book->name }}" />
+                            @else   
+                                <img class="object-cover w-full h-full" src="https://cdn.rareblocks.xyz/collection/celebration/images/blog/1/blog-post-1.jpg" alt="{{ $book->name }}" />
                             @endif
-                            
                         </a>
-                        <span class="inline-flex px-4 py-2 text-xs font-semibold tracking-widest uppercase rounded-full bg-blue-100 text-blue-600 mt-9">
+                        <span class="inline-flex px-4 py-2 text-xs font-semibold tracking-widest uppercase rounded-full {{ $book->category_color }} mt-9">
                             {{ $book->category->name }}
                         </span>
                         <p class="mt-6 text-xl font-semibold">
@@ -71,9 +71,9 @@
                         </p>
                         <div class="h-0 mt-6 mb-4 border-t-2 border-gray-200 border-dashed"></div>
                         <span class="block text-sm font-bold tracking-widest text-gray-500 uppercase">
-                            {{ $book->author->name }} . {{ $book->published_at->format('F j, Y') }}
+                            {{ $book->author->name }} | {{ optional($book->published_at)->diffForHumans() ?? 'Belum terbit' }}
                         </span>
-                    </div>
+                    </div>    
                 @endforeach
 
             </div>
