@@ -26,7 +26,7 @@ class BorrowController extends Controller
             'book_id' => $request->book_id,
             'borrow_date' => $borrowDate,
             'due_date' => $dueDate,
-            'status' => 'dipinjam',
+            'status' => 'diajukan',
         ]);
 
         $book = Book::find($request->book_id);
