@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Author;
 use App\Models\Book;
 use App\Models\Category;
-use App\Models\Author;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class BookController extends Controller
@@ -15,7 +15,7 @@ class BookController extends Controller
      */
     public function index()
     {
-        $title = "Dahsboard | Book";
+        $title = "Book | Index";
         $books = Book::latest()->paginate(9);
 
         return view('dashboard.book.index', compact('title', 'books'));
@@ -26,7 +26,7 @@ class BookController extends Controller
      */
     public function create()
     {
-        $title = "Dahsboard | Create Book";
+        $title = "Book - Create";
         $categories = Category::all();
         $authors = Author::all();
 
@@ -40,21 +40,21 @@ class BookController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'required|max:255',
-            'slug' => 'required|unique:books,slug',
+            'slug' => 'required|max:255|unique:books',
+            'cover' => 'required|image|max:1024',
             'body' => 'required',
             'published_at' => 'date',
-            'cover' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'category_id' => 'required|exists:categories,id',
-            'author_id' => 'required|exists:authors,id'
+            'category_id' => 'required',
+            'author_id' => 'required'
         ]);
 
-
         if ($request->file('cover')) {
-            $validatedData['cover'] = $request->file('cover')->store('book-covers', 'public');
+            $validatedData['cover'] = $request->file('cover')->store('cover-buku', 'public');
         }
 
         Book::create($validatedData);
-        return redirect('/dashboard/book')->with('success', 'Book created successfully.');
+
+        return redirect('/dashboard/book')->with('success', 'Data buku berhasil ditambahkan!');
     }
 
     /**
@@ -70,31 +70,31 @@ class BookController extends Controller
      */
     public function edit(Book $book)
     {
-        $title = "Dahsboard | Edit Book";
+        $title = "Book - Edit";
         $categories = Category::all();
         $authors = Author::all();
 
-        return view('dashboard.book.edit', compact('title', 'book', 'categories', 'authors'));
+        return view('dashboard.book.edit', compact('title', 'categories', 'authors', 'book'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request,  Book $book)
+    public function update(Request $request, Book $book)
     {
         $rules = [
             'name' => 'required|max:255',
+            'cover' => 'required|image|max:1024',
             'body' => 'required',
             'published_at' => 'date',
-            'cover' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'category_id' => 'required|exists:categories,id',
-            'author_id' => 'required|exists:authors,id'
+            'category_id' => 'required',
+            'author_id' => 'required'
         ];
 
         if ($request->slug != $book->slug) {
             $rules['slug'] = 'required|max:255|unique:books';
         }
-
+    
         $validatedData = $request->validate($rules);
 
         if ($request->hasFile('cover')) {
@@ -102,12 +102,12 @@ class BookController extends Controller
                 Storage::disk('public')->delete($book->cover);
             }
 
-            $validatedData['cover'] = $request->file('cover')->store('book-covers', 'public');
+            $validatedData['cover'] = $request->file('cover')->store('cover-buku', 'public');
         }
 
         Book::where('id', $book->id)->update($validatedData);
 
-        return redirect('/dashboard/book')->with('success', 'Book created successfully.');
+        return redirect('/dashboard/book')->with('success', 'Data buku berhasil diperbarui!');
     }
 
     /**
@@ -120,6 +120,7 @@ class BookController extends Controller
         }
 
         Book::destroy($book->id);
-        return redirect('/dashboard/book')->with('success', 'Book deleted successfully.');
+
+        return redirect('/dashboard/book')->with('success', 'Data buku berhasil dihapus!');
     }
 }

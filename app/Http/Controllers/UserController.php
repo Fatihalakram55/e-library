@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -13,37 +12,39 @@ class UserController extends Controller
      */
     public function index()
     {
-        $title = 'User';
         $users = User::latest()->paginate(9);
-        return view("dashboard.user.index", compact("users", "title"));
+        $title = "User";
+
+        return view('dashboard.user.index', compact('users', 'title'));
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create(User $user)
+    public function create()
     {
-        $title = 'Create User';
-        return view('dashboard.user.create', compact('title', 'user'));
+        $title = "User - create";
+
+        return view('dashboard.user.create', compact('title'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request, User $user)
+    public function store(Request $request)
     {
-        $validate = $request->validate([
-            'name' => 'required|min:2|string|max:255|unique:users',
-            'slug' => 'required|string|max:255|unique:users',
-            'username' => 'required|string|max:255|unique:users',
-            'email' => 'required|email|unique:users',
-            'role' => 'required|string|max:255',
-            'password' => 'required|string|min:6'
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'slug' => 'required|unique:users',
+            'email' => 'required|email|unique:users|email:dns',
+            'username' => 'required|string|min:3|max:255|unique:users',
+            'password' => 'required|string|min:5',
+            'role' => 'required'
         ]);
 
-        $validate['password'] = bcrypt($validate['password']);
-        $user::create($validate);
-        return redirect('/dashboard/user')->with('success', 'User created successfully.');
+        User::create($validatedData);
+
+        return redirect('/dashboard/user')->with('success', 'Data pengguna berhasil ditambahkan!');
     }
 
     /**
@@ -59,7 +60,8 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        $title = 'Edit User';
+        $title = "User - Edit";
+
         return view('dashboard.user.edit', compact('title', 'user'));
     }
 
@@ -69,28 +71,26 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         $rules = [
-            'name'=> 'required|min:2|string|max:255|',
-            'password' => 'required|string|min:6|',
-            'email'=> 'required',
-            'role' => 'required|string|max:255',];
-        if (request('slug') != $user->slug){
-            $rules['slug'] = 'required|unique:users';
-            
+            'name' => 'required|max:255',
+            'password' => 'required|string|min:5',
+            'role' => 'required'
+        ];
+
+        if (request('slug') != $user->slug) {
+            $rules['slug'] = 'unique:users|required';
+        }
+        if (request('username') != $user->username) {
+            $rules['username'] = 'unique:users|required';
+        }
+        if (request('email') != $user->email) {
+            $rules['email'] = 'unique:users|required';
         }
 
-        if (request('username') != $user->username){
-            $rules['username'] = 'required|unique:users';
-        }
+        $validatedData = $request->validate($rules);
 
-        if (request('email') != $user->email){
-            $rules['email'] = 'required|email|unique:users';
-        }
+        User::where('slug', $user->slug)->update($validatedData);
 
-
-
-        $validate = $request->validate($rules);
-        $user->update($validate);
-        return redirect('/dashboard/user')->with('success', 'User updated successfully.');
+        return redirect('/dashboard/user')->with('success', 'Data berhasil diubah!!');
     }
 
     /**
@@ -98,7 +98,8 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        $user->delete();
-        return redirect('/dashboard/user')->with('success', 'User deleted successfully.');
+        User::destroy($user->id);
+
+        return redirect('/dashboard/user')->with('success', 'Data pengguna berhasil dihapus!');
     }
 }

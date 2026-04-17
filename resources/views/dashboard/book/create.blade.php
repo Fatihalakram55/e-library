@@ -1,5 +1,5 @@
 @extends('dashboard.layout.main')
- 
+
 @section('content')
 <div class="grid grid-cols-12 gap-4">
   <div class="col-span-12 lg:col-span-9 p-4">
@@ -20,7 +20,7 @@
         <div>
           <label for="slug" class="block text-sm font-medium text-gray-700">Slug</label>
           <input type="text" name="slug" id="slug" value="{{ old('slug') }}" required
-            class="mt-1 p-2 block w-full rounded-md  border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm @error('slug') border-red-500 @enderror">
+            class="mt-1 p-2 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm @error('slug') border-red-500 @enderror">
           @error('slug')
             <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
           @enderror
@@ -29,7 +29,7 @@
         <div>
             <label for="body" class="block text-sm font-medium text-gray-700">Body</label>
             <textarea name="body" id="body" rows="4" required
-            class="mt-1 p-2 block w-full rounded-md  border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm @error('body') border-red-500 @enderror">{{ old('body', $book->body ?? '') }}</textarea>
+            class="mt-1 p-2 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm @error('body') border-red-500 @enderror">{{ old('body', $book->body ?? '') }}</textarea>
             @error('body')
             <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
             @enderror
@@ -104,12 +104,12 @@
     </div>
   </div>
 </div>
- 
+
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const nameInput = document.getElementById('name');
     const slugInput = document.getElementById('slug');
- 
+
     nameInput.addEventListener('input', function () {
       const slug = nameInput.value
         .toLowerCase()
@@ -117,7 +117,7 @@
         .replace(/[^a-z0-9\s-]/g, '') // Hapus karakter non-alfanumerik
         .replace(/\s+/g, '-')         // Ganti spasi dengan tanda hubung
         .replace(/-+/g, '-');         // Ganti beberapa tanda hubung dengan satu
- 
+
       slugInput.value = slug;
     });
   });
@@ -126,17 +126,17 @@
     function previewImage(params) {
       const image = document.querySelector('#cover');
       const imgPreview = document.querySelector('.img-preview');
- 
+
       imgPreview.style.display = 'block';
- 
+
       const oFReader = new FileReader();
       oFReader.readAsDataURL(image.files[0]);
- 
+
       oFReader.onload = function(oFREvent) {
         imgPreview.src = oFREvent.target.result;
       }
     }
 </script>
   
- 
+
 @endsection

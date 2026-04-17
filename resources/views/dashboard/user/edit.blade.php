@@ -8,6 +8,7 @@
       <form action="/dashboard/user/{{ $user->slug }}" method="post" class="space-y-6">
         @csrf
         @method('PUT')
+
         <!-- Name Field -->
         <div>
           <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
@@ -20,18 +21,18 @@
 
         <!-- Slug Field -->
         <div>
-            <label for="slug" class="block text-sm font-medium text-gray-700">Slug</label>
-            <input type="text" name="slug" id="slug" value="{{ $user->slug ?? old('slug') }}" required
+          <label for="slug" class="block text-sm font-medium text-gray-700">Slug</label>
+          <input type="text" name="slug" id="slug" value="{{ $user->slug ?? old('slug') }}" required
             class="mt-1 p-2 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm @error('slug') border-red-500 @enderror">
-            @error('slug')
+          @error('slug')
             <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
-            @enderror
+          @enderror
         </div>
 
         <!-- Username Field -->
         <div>
           <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
-          <input type="text" name="username" id="username" value="{{ $user->username ?? old('slug') }}" required
+          <input type="text" name="username" id="username" value="{{ $user->username ?? old('username') }}" required
             class="mt-1 p-2 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm @error('username') border-red-500 @enderror">
           @error('username')
             <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
@@ -40,24 +41,24 @@
 
         <!-- email Field -->
         <div>
-            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-            <input type="text" name="email" id="email" value="{{ $user->email ?? old('email') }}" required
+          <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+          <input type="email" name="email" id="email" value="{{ $user->email ?? old('email') }}" required
             class="mt-1 p-2 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm @error('email') border-red-500 @enderror">
-            @error('email')
+          @error('email')
             <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
-            @enderror
+          @enderror
         </div>
 
         <!-- password Field -->
         <div>
-            <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
-            <input type="text" name="password" id="password" value="{{ $user->password ?? old('password') }}" required
+          <label for="password" class="block text-sm font-medium text-gray-700">password</label>
+          <input type="text" name="password" id="password" value="{{ $user->password ?? old('password') }}" required
             class="mt-1 p-2 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm @error('password') border-red-500 @enderror">
-            @error('password')
+          @error('password')
             <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
-            @enderror
+          @enderror
         </div>
-        
+
         <!-- Role Select Field -->
         <div>
             <label for="role" class="block text-sm font-medium text-gray-700">Role</label>

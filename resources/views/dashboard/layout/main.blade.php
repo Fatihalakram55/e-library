@@ -17,8 +17,8 @@
     
     <title>E-Library | {{ $title }}</title>
     @vite('resources/css/dashboard.css')
-</head>
 
+</head>
 <body class="text-gray-800 font-inter">
     @include('dashboard.partials.sidebar')
 

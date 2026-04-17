@@ -54,4 +54,5 @@ class Book extends Model
     {
         return 'slug';
     }
+
 }

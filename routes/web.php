@@ -8,7 +8,6 @@ use App\Http\Controllers\HallController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
-use App\Models\Borrow;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/about', function () {
@@ -29,6 +28,8 @@ Route::post('/registration', [LoginController::class, 'store'])->middleware('gue
 Route::post('logout', [LoginController::class, 'logout'])->middleware('auth');
 
 Route::post('/borrow', [BorrowController::class, 'store'])->middleware('auth');
+Route::get('/borrows/{user:slug}', [BorrowController::class, 'userIndex'])->middleware('auth')->name('borrows');
+Route::get('/borrows/detail/{borrow}', [BorrowController::class, 'detail'])->middleware('auth');
 
 Route::prefix('dashboard')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('/', function () {
@@ -46,8 +47,8 @@ Route::prefix('dashboard')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::resource('user', UserController::class);
     Route::resource('book', BookController::class);
 
-    Route::get('/borrow', [BorrowController::class, 'index']);
-    Route::get('/borrow/{borrow}/edit', [BorrowController::class, 'edit']);
-    Route::put('/borrow/{borrow}', [BorrowController::class, 'update']);
-    Route::delete('/borrow/{borrow}', [BorrowController::class, 'destroy']);
+    Route::get('borrow', [BorrowController::class, 'index']);
+    Route::get('borrow/{borrow}/edit', [BorrowController::class, 'edit']);
+    Route::put('borrow/{borrow}', [BorrowController::class, 'update']);  
+    Route::delete('borrow/{borrow}', [BorrowController::class, 'destroy']);
 });

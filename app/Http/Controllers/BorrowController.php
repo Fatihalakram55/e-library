@@ -2,43 +2,48 @@
 
 namespace App\Http\Controllers;
 
-use Carbon\Carbon;
-use Illuminate\Http\Request;
-use App\Models\Borrow;
 use App\Models\Book;
+use App\Models\Borrow;
+use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class BorrowController extends Controller
 {
-    public function index()
-    {
-        $title = 'Dashboard | Borrow List';
-        $borrows = Borrow::latest()->paginate(9);
-        return view('dashboard.borrow.index', compact('title', 'borrows'));
-    }
-
     public function store(Request $request)
     {
-        $borrowDate = Carbon::now();
-        $dueDate = $borrowDate->copy()->addDays(7); 
+        $borrowDate = Carbon::today();
+        $dueDate = $borrowDate->copy()->addDays(7);
 
         Borrow::create([
             'user_id' => $request->user_id,
             'book_id' => $request->book_id,
             'borrow_date' => $borrowDate,
             'due_date' => $dueDate,
-            'status' => 'diajukan',
+            'status' => 'diajukan'
         ]);
 
         $book = Book::find($request->book_id);
         $book->status = 1;
         $book->save();
 
-            return redirect('/');
-        }
+        $user = User::find($request->user_id);
+
+        return redirect()->route('borrows', $user->slug)->with('success', "Berhasil pinjam buku!!");
+        // return dd($request->all());
+    }
+
+    public function index()
+    {
+        $title = 'Borrow - Index';
+        $borrows = Borrow::latest()->paginate(9);
+
+        return view('dashboard.borrow.index', compact('title', 'borrows'));
+    }
 
     public function edit(Borrow $borrow)
     {
-        $title = 'Dashboard | Edit Borrow';
+        $title = "Borrow - Edit";
 
         return view('dashboard.borrow.edit', compact('title', 'borrow'));
     }
@@ -46,10 +51,15 @@ class BorrowController extends Controller
     public function update(Request $request, Borrow $borrow)
     {
         $borrow->status = $request->status;
+        if ($request->filled('message')) {
+            $borrow->message = $request->message;
+        }
+            
         $borrow->save();
 
-        $book = Book::find($borrow->book_id);
-        if ($request->status == 'diajukan' || $request->status == 'dipinjam') {
+        $book = Book::find($borrow->book->id);
+        
+        if ($request->status == 'diajukan' || $request->status == 'dipinjem') {
             $book->status = 1;
             $book->save();
         } elseif ($request->status == 'dikembalikan' || $request->status == 'ditolak') {
@@ -57,13 +67,28 @@ class BorrowController extends Controller
             $book->save();
         }
 
-        return redirect('/dashboard/borrow')->with('success', 'Borrow status updated successfully.');
+        return redirect('/dashboard/borrow')->with('success', 'Data peminjaman berhasil diupdate!!');
     }
 
     public function destroy(Borrow $borrow)
     {
         Borrow::destroy($borrow->id);
 
-        return redirect('/dashboard/borrow')->with('success', 'Borrow record deleted successfully!');
+        return redirect('/dashboard/borrow')->with('success', 'Data peminjaman berhasil dihapus!!');
+    }
+
+    public function userIndex(User $user)
+    {
+        $title = $user->name . ' Borrows';
+        $borrows = Borrow::where('user_id', $user->id)->latest()->paginate(10);
+
+        return view('borrows', compact('title', 'borrows'));
+    }
+
+    public function detail(Borrow $borrow)
+    {
+        $title = 'Borrow Detail';
+
+        return view('borrow-detail', compact('title', 'borrow'));
     }
 }

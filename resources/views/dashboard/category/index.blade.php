@@ -58,13 +58,14 @@
                     @endforeach
                 @else
                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
-                        <td colspan="6" class="px-6 py-4 text-center text-gray-800">
+                        <td colspan="4" class="px-6 py-4 text-center text-gray-500">
                             Tidak ada data kategori.
                         </td>
-                    </tr>
+                    </tr>  
                 @endif
             </tbody>
         </table>
+
         {{-- pagination --}}
         <div class="mt-6">
             {{ $categories->links() }}

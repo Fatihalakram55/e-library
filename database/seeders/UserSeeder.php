@@ -23,11 +23,11 @@ class UserSeeder extends Seeder
                 'role' => 'admin'
             ],
             [
-                'name' => "Muhammad Ammar Ayyasy",
-                'slug' => "muhammad-ammar-ayyasy",
-                'username' => "ammarayyasy",
-                'email' => 'ammarmojur@gmail.com',
-                'password' => bcrypt('ammar123'),
+                'name' => "Fatih Al-Akram",
+                'slug' => "fatih-al-akram",
+                'username' => "akram",
+                'email' => 'fatihalakram55@gmail.com',
+                'password' => bcrypt('akram123'),
                 'role' => 'user'
             ],
         ]);

@@ -57,7 +57,7 @@
             @else
                 <img class="img-preview w-full h-auto mb-3 sm:w-5/12">
             @endif
-            <input type="file" name="cover" id="cover" onchange="previewImage()"
+            <input accept="image/*" type="file" name="cover" id="cover" onchange="previewImage()"
             class="p-2 mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md cursor-pointer bg-white focus:outline-none focus:border-indigo-500 focus:ring-indigo-500 @error('cover') border-red-500 @enderror">
             <p id="cover-filename" class="mt-1 text-sm text-gray-500"></p>
             @error('cover')
@@ -108,7 +108,7 @@
         <div>
           <button type="submit"
             class="inline-flex items-center px-4 py-2 bg-indigo-600 border border-transparent rounded-md font-semibold text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-            Create
+            Update
           </button>
         </div>
       </form>
