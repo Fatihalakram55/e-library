@@ -12,9 +12,11 @@ Route::get('/user', function (Request $request) {
 
 Route::get('/books',[ApiController::class,'index']);
 Route::get('/books/{id}',[ApiController::class,'show']);
+Route::get('/books/status/{status}', [ApiController::class, 'bookByStatus']);
 
 
 Route::post('/login',[ApiController::class,'login']);
+Route::get('/books/search/{search}',[ApiController::class,'search']);
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('/books',[ApiController::class,'store']);

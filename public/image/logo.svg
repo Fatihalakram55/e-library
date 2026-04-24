@@ -1,0 +1,39 @@
+<svg width="100%" viewBox="0 0 680 200" role="img" xmlns="http://www.w3.org/2000/svg">
+  <title style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">E-Library Logo Minimalis</title>
+  <desc style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">Logo E-Library minimalis dengan ikon buku dan teks horizontal</desc>
+
+  
+
+  <!-- ── ICON: open book, left page ── -->
+  <rect x="246" y="72" width="36" height="48" rx="3" fill="#1e3a5f" style="fill:rgb(30, 58, 95);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <!-- left page lines -->
+  <line x1="253" y1="86" x2="275" y2="86" stroke="#93c5fd" stroke-width="1.2" stroke-linecap="round" opacity="0.7" style="fill:rgb(0, 0, 0);stroke:rgb(147, 197, 253);color:rgb(0, 0, 0);stroke-width:1.2px;stroke-linecap:round;stroke-linejoin:miter;opacity:0.7;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <line x1="253" y1="93" x2="275" y2="93" stroke="#93c5fd" stroke-width="1.2" stroke-linecap="round" opacity="0.7" style="fill:rgb(0, 0, 0);stroke:rgb(147, 197, 253);color:rgb(0, 0, 0);stroke-width:1.2px;stroke-linecap:round;stroke-linejoin:miter;opacity:0.7;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <line x1="253" y1="100" x2="270" y2="100" stroke="#93c5fd" stroke-width="1.2" stroke-linecap="round" opacity="0.7" style="fill:rgb(0, 0, 0);stroke:rgb(147, 197, 253);color:rgb(0, 0, 0);stroke-width:1.2px;stroke-linecap:round;stroke-linejoin:miter;opacity:0.7;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <line x1="253" y1="107" x2="273" y2="107" stroke="#93c5fd" stroke-width="1.2" stroke-linecap="round" opacity="0.7" style="fill:rgb(0, 0, 0);stroke:rgb(147, 197, 253);color:rgb(0, 0, 0);stroke-width:1.2px;stroke-linecap:round;stroke-linejoin:miter;opacity:0.7;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- spine -->
+  <rect x="281" y="68" width="5" height="56" rx="2" fill="#3b82f6" style="fill:rgb(59, 130, 246);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- right page -->
+  <rect x="285" y="72" width="36" height="48" rx="3" fill="#2563eb" style="fill:rgb(37, 99, 235);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <!-- right page lines -->
+  <line x1="292" y1="86" x2="314" y2="86" stroke="#bfdbfe" stroke-width="1.2" stroke-linecap="round" opacity="0.7" style="fill:rgb(0, 0, 0);stroke:rgb(191, 219, 254);color:rgb(0, 0, 0);stroke-width:1.2px;stroke-linecap:round;stroke-linejoin:miter;opacity:0.7;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <line x1="292" y1="93" x2="314" y2="93" stroke="#bfdbfe" stroke-width="1.2" stroke-linecap="round" opacity="0.7" style="fill:rgb(0, 0, 0);stroke:rgb(191, 219, 254);color:rgb(0, 0, 0);stroke-width:1.2px;stroke-linecap:round;stroke-linejoin:miter;opacity:0.7;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <line x1="292" y1="100" x2="310" y2="100" stroke="#bfdbfe" stroke-width="1.2" stroke-linecap="round" opacity="0.7" style="fill:rgb(0, 0, 0);stroke:rgb(191, 219, 254);color:rgb(0, 0, 0);stroke-width:1.2px;stroke-linecap:round;stroke-linejoin:miter;opacity:0.7;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <line x1="292" y1="107" x2="312" y2="107" stroke="#bfdbfe" stroke-width="1.2" stroke-linecap="round" opacity="0.7" style="fill:rgb(0, 0, 0);stroke:rgb(191, 219, 254);color:rgb(0, 0, 0);stroke-width:1.2px;stroke-linecap:round;stroke-linejoin:miter;opacity:0.7;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- book base -->
+  <rect x="242" y="118" width="83" height="5" rx="2.5" fill="#1e3a5f" opacity="0.3" style="fill:rgb(30, 58, 95);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.3;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- ── TEXT ── -->
+  <!-- E-Library -->
+  <text x="348" y="110" font-size="42" font-weight="700" fill="#1e3a5f" letter-spacing="0.5" style="fill:rgb(30, 58, 95);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Playfair Display&quot;, Georgia, serif;font-size:42px;font-weight:700;text-anchor:start;dominant-baseline:auto">E-Library</text>
+
+  <!-- thin accent line -->
+  <rect x="348" y="118" width="56" height="2" rx="1" fill="#3b82f6" style="fill:rgb(59, 130, 246);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- tagline -->
+  <text x="350" y="138" font-size="10.5" font-weight="400" fill="#64748b" letter-spacing="2.5" style="fill:rgb(100, 116, 139);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;DM Sans&quot;, sans-serif;font-size:10.5px;font-weight:400;text-anchor:start;dominant-baseline:auto">PLATFORM LITERASI DIGITAL</text>
+
+</svg>

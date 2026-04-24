@@ -1,8 +1,8 @@
 <!--sidenav -->
 <div class="fixed left-0 top-0 w-64 h-full bg-[#f8f4f3] p-4 z-50 sidebar-menu transition-transform">
-    <a href="#" class="flex items-center pb-4 border-b border-b-gray-800">
-
-        <h2 class="font-bold text-2xl">LOREM <span class="bg-[#f84525] text-white px-2 rounded-md">IPSUM</span></h2>
+    {{-- LOGO --}}
+    <a href="/" class="flex items-center justify-center gap-2">
+        <span class="text-gray-950 font-bold text-xl">E-Library <i class="fa-solid fa-book-open text-indigo-400"></i></span>
     </a>
     <ul class="mt-4">
         <span class="text-gray-400 font-bold">ADMIN</span>

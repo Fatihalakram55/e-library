@@ -81,27 +81,24 @@
         <div class="grid grid-cols-2 gap-3">
             <div class="bg-gray-50 rounded-xl border border-gray-100 p-3 text-center transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
                 <img src="https://picsum.photos/seed/person1/56/56" class="w-12 h-12 rounded-full object-cover mx-auto mb-2 ring-2 ring-blue-200" alt="Rizky D." />
-                <p class="text-xs font-semibold text-slate-800">Rizky D.</p>
-                <p class="text-[10px] text-gray-400 mt-0.5">Project Lead</p>
+                <p class="text-xs font-semibold text-slate-800">Ammar Ayyasy</p>
+                <p class="text-[10px] text-gray-400 mt-0.5">Mentoring Teacher</p>
             </div>
             <div class="bg-gray-50 rounded-xl border border-gray-100 p-3 text-center transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
                 <img src="https://picsum.photos/seed/person2/56/56" class="w-12 h-12 rounded-full object-cover mx-auto mb-2 ring-2 ring-blue-200" alt="Annisa N." />
-                <p class="text-xs font-semibold text-slate-800">Annisa N.</p>
-                <p class="text-[10px] text-gray-400 mt-0.5">UI/UX Designer</p>
+                <p class="text-xs font-semibold text-slate-800">Fatih Al-Akram</p>
+                <p class="text-[10px] text-gray-400 mt-0.5">Backend Dev</p>
             </div>
             <div class="bg-gray-50 rounded-xl border border-gray-100 p-3 text-center transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
                 <img src="https://picsum.photos/seed/person3/56/56" class="w-12 h-12 rounded-full object-cover mx-auto mb-2 ring-2 ring-blue-200" alt="Bagas F." />
-                <p class="text-xs font-semibold text-slate-800">Bagas F.</p>
+                <p class="text-xs font-semibold text-slate-800">Claude</p>
                 <p class="text-[10px] text-gray-400 mt-0.5">Frontend Dev</p>
             </div>
             <div class="bg-gray-50 rounded-xl border border-gray-100 p-3 text-center transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
                 <img src="https://picsum.photos/seed/person4/56/56" class="w-12 h-12 rounded-full object-cover mx-auto mb-2 ring-2 ring-blue-200" alt="Dewi M." />
-                <p class="text-xs font-semibold text-slate-800">Dewi M.</p>
-                <p class="text-[10px] text-gray-400 mt-0.5">Backend Dev</p>
+                <p class="text-xs font-semibold text-slate-800">ChatGPT</p>
+                <p class="text-[10px] text-gray-400 mt-0.5">Frontend Dev</p>
             </div>
-        </div>
-        <div class="mt-3 bg-blue-50 rounded-lg p-3 border border-blue-100">
-            <p class="text-xs text-blue-900 leading-relaxed">Dikembangkan sebagai proyek tugas akhir mahasiswa Teknik Informatika untuk memodernisasi sistem perpustakaan konvensional.</p>
         </div>
     </div>
 </div>
